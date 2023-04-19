@@ -15,7 +15,7 @@ namespace TaskScheduler
 
         public async Task<TApiResponse> Get<TApiResponse>(string url)
         {
-            _logger.LogTrace("attempting to fetch fuel prices");
+            _logger.LogTrace("attempting to GET type {0} from {1}", nameof(TApiResponse), url);
 
             var request = new HttpRequestMessage(HttpMethod.Get, url);
             using var client = new HttpClient();
